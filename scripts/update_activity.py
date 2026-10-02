@@ -67,6 +67,9 @@ def minecraft_hours() -> int:
 
 def account_usage() -> tuple[int, int]:
     codex = shutil.which("codex") or str(Path.home() / ".local/bin/codex")
+    env = dict(os.environ)
+    env.setdefault("HTTPS_PROXY", "http://127.0.0.1:10808")
+    env.setdefault("HTTP_PROXY", "http://127.0.0.1:10808")
     process = subprocess.Popen(
         [codex, "app-server"],
         stdin=subprocess.PIPE,
@@ -74,6 +77,7 @@ def account_usage() -> tuple[int, int]:
         stderr=subprocess.DEVNULL,
         text=True,
         bufsize=1,
+        env=env,
     )
     try:
         assert process.stdin is not None and process.stdout is not None
@@ -184,7 +188,7 @@ def update_readme() -> bool:
 
 def git(*args: str) -> None:
     env = dict(os.environ, GIT_TERMINAL_PROMPT="0")
-    subprocess.run(["git", "-C", str(ROOT), *args], check=True, env=env)
+    subprocess.run(["git", "-C", str(ROOT), *args], check=True, env=env, timeout=35)
 
 
 def main() -> None:
