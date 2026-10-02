@@ -7,6 +7,7 @@ import argparse
 import json
 import os
 from pathlib import Path
+import re
 import select
 import shutil
 import sqlite3
@@ -113,7 +114,9 @@ def account_usage() -> tuple[int, int]:
                 if reply.get("id") != 2:
                     continue
                 if "error" in reply:
-                    raise RuntimeError(reply["error"])
+                    error = reply["error"]
+                    message = str(error.get("message", error) if isinstance(error, dict) else error)
+                    raise RuntimeError(message.split("; body=", 1)[0][:240])
                 summary = reply["result"]["summary"]
                 tokens = summary.get("lifetimeTokens")
                 streak = summary.get("currentStreakDays")
@@ -141,16 +144,27 @@ def update_readme() -> bool:
     original = README.read_text(encoding="utf-8")
     codex = codex_runtime_hours()
     minecraft = minecraft_hours()
-    tokens, streak = account_usage()
+    try:
+        tokens, streak = account_usage()
+        chatgpt_line = (
+            f"- **ChatGPT profile:** {format_tokens(tokens)} tokens · "
+            f"{streak}-day streak"
+        )
+    except (OSError, RuntimeError, TimeoutError, KeyError, ValueError) as exc:
+        previous = re.search(r"^- \*\*ChatGPT (?:profile|\+ Codex):\*\* .+$", original, re.M)
+        if previous is None:
+            raise
+        chatgpt_line = previous.group(0).replace("**ChatGPT + Codex:**", "**ChatGPT profile:**")
+        print(f"ChatGPT activity unavailable; keeping previous value: {exc}")
     today = datetime.now(ZoneInfo("Europe/Moscow")).date().isoformat()
     block = (
         f"{START}\n"
         "### Activity\n\n"
         f"- **Codex:** {codex:,} h of recorded agent runtime since April 2026\n"
-        f"- **ChatGPT + Codex:** {format_tokens(tokens)} tokens · {streak}-day streak\n"
+        f"{chatgpt_line}\n"
         f"- **Minecraft:** {minecraft:,} h in Prism Launcher\n\n"
         "<sub>Local Codex task history and Prism Launcher playtime; "
-        f"ChatGPT account activity. Updated {today} while my PC is on.</sub>\n"
+        f"ChatGPT account activity. Local counters updated {today} while my PC is on.</sub>\n"
         f"{END}"
     )
     if START in original and END in original:
