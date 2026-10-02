@@ -13,6 +13,16 @@ Elsewhere: Linux systems, self-hosting, analog synths, audio tooling, and whatev
 - [Studizba Analytics](https://github.com/ari3lYT/studizba-analytics) — historical collection, confidence-aware analytics, REST, and MCP for BMSTU teacher reviews.
 - [Mail to Telegram](https://github.com/ari3lYT/mail-to-telegram) — a self-hosted IMAP bridge with attachments and durable checkpoints.
 
+<!-- activity:start -->
+### Activity
+
+- **Codex:** 681 h of recorded agent runtime since April 2026
+- **ChatGPT + Codex:** 7.07B tokens · 5-day streak
+- **Minecraft:** 2,231 h in Prism Launcher
+
+<sub>Local Codex task history and Prism Launcher playtime; ChatGPT account activity. Updated 2026-10-02 while my PC is on.</sub>
+<!-- activity:end -->
+
 `FOSS first` · `own your tools` · `make weird things`
 
 <sub>ssh, patch cables, and black cats.</sub>
