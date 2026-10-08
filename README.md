@@ -16,9 +16,9 @@ Elsewhere: Linux systems, self-hosting, analog synths, audio tooling, and whatev
 <!-- activity:start -->
 ### Activity
 
-- **Codex:** 712 h of recorded agent runtime since April 2026
-- **ChatGPT profile:** 1.02B tokens · 4-day streak
-- **Minecraft:** 2,280 h in Prism Launcher
+- **Codex:** 714 h of recorded agent runtime since April 2026
+- **ChatGPT profile:** 1.13B tokens · 5-day streak
+- **Minecraft:** 2,286 h in Prism Launcher
 
 <sub>Local Codex task history and Prism Launcher playtime; ChatGPT account activity. Local counters updated 2026-10-08 while my PC is on.</sub>
 <!-- activity:end -->
