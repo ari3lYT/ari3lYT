@@ -16,11 +16,11 @@ Elsewhere: Linux systems, self-hosting, analog synths, audio tooling, and whatev
 <!-- activity:start -->
 ### Activity
 
-- **Codex:** 730 h of recorded agent runtime since April 2026
-- **ChatGPT profile:** 2.05B tokens · 7-day streak
-- **Minecraft:** 2,291 h in Prism Launcher
+- **Codex:** 735 h of recorded agent runtime since April 2026
+- **ChatGPT profile:** 2.47B tokens · 7-day streak
+- **Minecraft:** 2,293 h in Prism Launcher
 
-<sub>Local Codex task history and Prism Launcher playtime; ChatGPT account activity. Local counters updated 2026-10-10 while my PC is on.</sub>
+<sub>Local Codex task history and Prism Launcher playtime; ChatGPT account activity. Local counters updated 2026-10-11 while my PC is on.</sub>
 <!-- activity:end -->
 
 `FOSS first` · `own your tools` · `make weird things`
