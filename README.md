@@ -20,7 +20,7 @@ Elsewhere: Linux systems, self-hosting, analog synths, audio tooling, and whatev
 - **ChatGPT profile:** 7.20B tokens · 24-day streak
 - **Minecraft:** 2,488 h in Prism Launcher
 
-<sub>Local Codex task history and Prism Launcher playtime; ChatGPT account activity. Local counters updated 2026-10-27 while my PC is on.</sub>
+<sub>Local Codex task history and Prism Launcher playtime; ChatGPT account activity. Local counters updated 2026-10-28 while my PC is on.</sub>
 <!-- activity:end -->
 
 `FOSS first` · `own your tools` · `make weird things`
